@@ -1,17 +1,50 @@
-# ui_profil_flutter_baru
+# Aplikasi Profil Flutter
 
-A new Flutter project.
+## Identitas Mahasiswa
 
-## Getting Started
+- **Nama:** Muhamad Miftahul Ulum
+- **NIM:** 1124160131
+- **Kelas:** TI 24 P / SE 2
+- **Program Studi:** Teknik Informatika
+- **Konsentrasi:** Software Engineering
 
-This project is a starting point for a Flutter application.
+## Deskripsi Proyek
 
-A few resources to get you started if this is your first Flutter project:
+Proyek ini merupakan latihan pembuatan antarmuka profil pengguna menggunakan Flutter. Pengerjaan dilakukan secara bertahap dengan menerapkan konsep widget, pemisahan komponen, dan refactoring agar kode lebih terstruktur serta mudah digunakan kembali.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Perbaikan dan Pengerjaan
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1. Membuat Kerangka Halaman Profil
+- Membuat struktur aplikasi menggunakan `MaterialApp`.
+- Membuat halaman profil menggunakan `Scaffold` dan `AppBar`.
+- Mengatur judul halaman menjadi Profil Mahasiswa.
+
+### 2. Memisahkan Widget Avatar dan Informasi
+- Membuat file `profile_avatar.dart` untuk menampilkan avatar pengguna.
+- Membuat file `profile_info.dart` untuk menampilkan nama dan status mahasiswa.
+- Memisahkan komponen dari halaman utama agar kode lebih rapi dan terstruktur.
+
+### 3. Menambahkan Statistik Profil
+- Membuat file `profile_stats.dart`.
+- Menampilkan statistik Proyek, Followers, dan Following.
+- Membuat widget `ProfileStats` untuk menampilkan keseluruhan statistik.
+- Membuat widget `StatItem` agar setiap item statistik dapat digunakan kembali.
+- Mengatur tata letak statistik menggunakan widget `Row`, `Column`, dan `Container`.
+
+## Struktur File
+
+```text
+lib/
+├── main.dart
+├── profile_page.dart
+├── profile_avatar.dart
+├── profile_info.dart
+└── profile_stats.dart
+```
+
+## Status Pengerjaan
+
+Pengerjaan saat ini telah mencakup pembuatan kerangka halaman profil, pemisahan widget avatar dan informasi, serta penambahan komponen statistik profil.
+
+Pengembangan selanjutnya akan dilakukan secara bertahap sesuai dengan modul praktikum.
+
