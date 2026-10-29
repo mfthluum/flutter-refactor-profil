@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
       'icon': Icons.theater_comedy,
     },
     {
-      'title': 'Aktor Utama Lomba Teater Juara 3 SOT',
+      'title': 'Aktor Utama Lomba Teater SOT',
       'place': 'Global Institute • Bogor, Jawa Barat • 2026',
       'icon': Icons.masks,
     },
@@ -139,31 +139,10 @@ class ProfilePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final experience = experiences[index];
 
-                  return Card(
-                    elevation: 2,
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.all(12),
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.blue.shade50,
-                        child: Icon(
-                          experience['icon'] as IconData,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
-                      title: Text(
-                        experience['title'] as String,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(top: 6),
-                        child: Text(
-                          experience['place'] as String,
-                        ),
-                      ),
-                    ),
+                  return ExperienceCard(
+                    title: experience['title'] as String,
+                    place: experience['place'] as String,
+                    icon: experience['icon'] as IconData,
                   );
                 },
               ),
@@ -206,6 +185,47 @@ class StatItem extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class ExperienceCard extends StatelessWidget {
+  final String title;
+  final String place;
+  final IconData icon;
+
+  const ExperienceCard({
+    super.key,
+    required this.title,
+    required this.place,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 2,
+      margin: const EdgeInsets.symmetric(vertical: 6),
+      child: ListTile(
+        contentPadding: const EdgeInsets.all(12),
+        leading: CircleAvatar(
+          backgroundColor: Colors.blue.shade50,
+          child: Icon(
+            icon,
+            color: Colors.blueAccent,
+          ),
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 6),
+          child: Text(place),
+        ),
+      ),
     );
   }
 }
