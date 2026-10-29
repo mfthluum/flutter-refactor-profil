@@ -10,7 +10,7 @@ Aplikasi profil sederhana yang dikembangkan menggunakan Flutter sebagai latihan 
 
 ## Deskripsi Proyek
 
-Aplikasi ini menampilkan profil pengguna, informasi nama dan peran, statistik profil, serta daftar pengalaman dan prestasi. Struktur kode disederhanakan menjadi dua file Dart utama agar lebih mudah dipahami dan dikembangkan.
+Aplikasi ini menampilkan profil pengguna, informasi nama dan peran, statistik profil, serta daftar pengalaman dan prestasi. Pengembangan dilakukan secara bertahap dengan menerapkan widget dasar Flutter dan refactoring untuk membuat struktur kode lebih rapi serta mudah dipahami.
 
 ## Perbaikan dan Pembaruan
 
@@ -26,22 +26,24 @@ Aplikasi ini menampilkan profil pengguna, informasi nama dan peran, statistik pr
 - Menambahkan bagian statistik profil.
 
 ### 3. Penyederhanaan Struktur File
-- Menggabungkan komponen profil ke dalam `profile_page.dart`.
+- Menggabungkan widget profil ke dalam `profile_page.dart`.
 - Menghapus file widget terpisah yang tidak lagi digunakan.
 - Mempertahankan dua file Dart utama, yaitu `main.dart` dan `profile_page.dart`.
 
 ### 4. Penambahan Pengalaman dan Prestasi
-- Menambahkan delapan pengalaman dan prestasi pengguna.
+- Menambahkan delapan data pengalaman dan prestasi.
 - Menyimpan data pengalaman dalam `List<Map<String, dynamic>>`.
 - Menggunakan `ListView.builder` untuk menampilkan daftar pengalaman.
-- Menggunakan `Card` dan `ListTile` untuk menyusun setiap item.
+- Menggunakan `Expanded` agar daftar dapat menyesuaikan ruang yang tersedia.
+- Menyusun setiap item menggunakan `Card` dan `ListTile`.
 - Menambahkan ikon yang sesuai dengan masing-masing pengalaman.
-- Menggunakan `Expanded` agar daftar dapat di-scroll pada ruang yang tersedia.
 
-### 5. Perapian Kode
-- Menyesuaikan susunan widget agar lebih rapi.
-- Menggunakan widget `StatItem` untuk menampilkan statistik.
-- Memisahkan konfigurasi aplikasi dan halaman profil ke dalam dua file Dart.
+### 5. Refactoring Widget ExperienceCard
+- Memisahkan tampilan setiap item pengalaman ke dalam widget khusus bernama `ExperienceCard`.
+- Menambahkan parameter `title`, `place`, dan `icon`.
+- Menggunakan kembali widget `ExperienceCard` untuk menampilkan data pengalaman.
+- Menambahkan `CircleAvatar` sebagai wadah ikon.
+- Mengatur jarak antaritem dan tampilan kartu agar lebih konsisten.
 
 ## Struktur File
 
@@ -66,9 +68,9 @@ lib/
 - `Card`
 - `ListTile`
 - `StatItem`
+- `ExperienceCard`
 
-
-## Riwayat Pembaruan
+## Riwayat Commit
 
 | Commit | Keterangan |
 |---|---|
@@ -77,7 +79,9 @@ lib/
 | `4952981` | Menambahkan README progres pengerjaan |
 | `d2141c2` | Menggabungkan widget profil dalam dua file |
 | `4a235b4` | Menambahkan daftar pengalaman dengan `ListView.builder` |
+| `b1bdb58` | Memperbarui README dengan daftar perbaikan dan pembaruan |
+| `152a1f0` | Refactoring item pengalaman menjadi widget `ExperienceCard` |
 
 ## Status Proyek
 
-Pengembangan saat ini mencakup halaman profil, statistik pengguna, serta daftar pengalaman dan prestasi. Pembaruan fitur selanjutnya akan dilakukan secara bertahap sesuai kebutuhan proyek.
+Aplikasi telah memiliki halaman profil, statistik pengguna, daftar pengalaman dan prestasi, serta widget `ExperienceCard` yang dapat digunakan kembali. Pengembangan selanjutnya akan berfokus pada perapian jarak antarwidget dan penambahan tombol Edit Profil dengan notifikasi menggunakan `SnackBar`.
